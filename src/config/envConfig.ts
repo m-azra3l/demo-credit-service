@@ -1,8 +1,9 @@
 // Import the 'config' function from the 'dotenv' package to load environment variables from a .env file
-import { config } from 'dotenv';
-
+// import { config } from 'dotenv';
 // Load the environment variables from a .env file based on the current NODE_ENV (defaults to 'development')
-config({ path: `.env.${process.env.NODE_ENV || 'development'}.local` });
+// config({ path: `.env.${process.env.NODE_ENV || 'development'}.local` });
+
+require('dotenv').config();
 
 // Destructure and export the necessary environment variables from 'process.env'
 export const {
