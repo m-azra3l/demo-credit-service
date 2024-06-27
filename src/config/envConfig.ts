@@ -17,5 +17,6 @@ export const {
     DATABASE_PASSWORD,     // Password for the database user
     DATABASE_PORT,         // Port number on which the database server is listening
     DATABASE_USERNAME,     // Username for the database
-    NODE_ENV               // Current environment (development, staging, or production)
+    NODE_ENV,              // Current environment (development, staging, or production)
+    TOKEN_EXPIRATION       // Expiration time of created jwt
 } = process.env;
