@@ -28,7 +28,7 @@ const baseConfig: Knex.Config = {
         max: 10, // Maximum number of connections in the pool
     }, 
     migrations: {
-        directory: 'src/databases/migrations', // Directory for migration files
+        directory: 'src/data/migrations', // Directory for migration files
         tableName: 'migrations', // Table to track migration status
     }  
 };
@@ -38,7 +38,7 @@ const knexConfig: { [key: string]: Knex.Config } = {
     development: {
         ...baseConfig,
         seeds: {
-            directory: 'src/databases/seeds', // Directory for seed files
+            directory: 'src/data/seeds', // Directory for seed files
         },
     },
     staging: {
