@@ -2,7 +2,7 @@
 import { Model, ModelObject, Pojo } from 'objection';
 
 // Import the UserInterface for type checking
-import { UserInterface } from '../interfaces/user.inteface';
+import { UserInterface } from '../interfaces/user.interface';
 
 // Define the User model class, extending Objection's Model class and implementing UserInterface
 export class User extends Model implements UserInterface {
