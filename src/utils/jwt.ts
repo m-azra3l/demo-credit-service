@@ -4,7 +4,7 @@ import {
     TOKEN_EXPIRATION // Token expiration time
 } from '../config/envConfig';
 import jwt from 'jsonwebtoken'; // JSON Web Token library
-import { HttpError } from '../errors/HttpError'; // Custom error class
+import { HttpError } from '../errors/httpError'; // Custom error class
 import { 
     JWTData,        // Interface for JWT payload data
     TokenData       // Interface for returned token data
