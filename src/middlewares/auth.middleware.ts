@@ -1,4 +1,4 @@
-// Import necessary modules and types from express, jsonwebtoken, and your application
+// Import necessary modules and types from express, jsonwebtoken, and the application
 import { NextFunction, Response } from 'express';
 import { verify } from 'jsonwebtoken';
 import { JWTData, RequestWithUser } from '../interfaces/auth.interface';
@@ -44,4 +44,5 @@ const authMiddleware = async (req: RequestWithUser, res: Response, next: NextFun
     }
 };
 
+// Export the authMiddleware as the default export
 export default authMiddleware;

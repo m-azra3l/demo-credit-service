@@ -45,4 +45,5 @@ const validationMiddleware = (
   };
 };
 
+// Export the validationMiddleWare as the default export
 export default validationMiddleware;

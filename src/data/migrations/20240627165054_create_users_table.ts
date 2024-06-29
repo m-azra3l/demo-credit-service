@@ -5,6 +5,7 @@ export async function up(knex: Knex): Promise<void> {
     await knex.schema.createTable('users', function (table) {
         table.bigIncrements('id').unsigned().primary(); // Define 'id' as an auto-incremented unsigned big integer primary key
         table.string('name').notNullable(); // Define 'name' column as a non-nullable string
+        table.string('account_number', 10).notNullable().unique(); // Define 'account_number' column as a non-nullable unique string with a maximum length of 10 characters
         table.string('email', 50).notNullable().unique(); // Define 'email' column as a non-nullable unique string with a maximum length of 50 characters
         table.string('password', 255).notNullable(); // Define 'password' column as a non-nullable string with a maximum length of 255 characters
         table.timestamp('createdAt').defaultTo(knex.fn.now()); // Define 'createdAt' column with a default timestamp of the current time

@@ -19,6 +19,7 @@ export function createJwt(
     const jwtData: JWTData = {
         id: user.id,
         name: user.name,
+        accountNumber: user.accountNumber,
         email: user.email
     };
 

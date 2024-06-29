@@ -23,7 +23,7 @@ class AuthRoute {
   // Constructor to initialize routes
   constructor() {
     this.initializeRoutes();
-  }
+  };
 
   // Private method to initialize routes
   private initializeRoutes() {
@@ -40,7 +40,7 @@ class AuthRoute {
         validationMiddleware(SignInDto, 'body'), // Validate request body against SignInDto
         this.authController.signin // Handle the sign-in logic
     );
-  }
+  };
 }
 
 // Export the AuthRoute class to be used in other parts of the application

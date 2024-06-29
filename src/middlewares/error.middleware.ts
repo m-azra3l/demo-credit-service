@@ -34,4 +34,5 @@ const errorMiddleware = (
   }
 };
 
+// Export the errorMiddleware as the default export
 export default errorMiddleware;

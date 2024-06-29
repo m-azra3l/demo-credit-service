@@ -64,4 +64,5 @@ const loggerStream = {
     },
 };
 
+// Export the logger and loggerStream as the default export
 export { logger, loggerStream };

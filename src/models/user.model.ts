@@ -6,13 +6,14 @@ import { UserInterface } from '../interfaces/user.interface';
 
 // Define the User model class, extending Objection's Model class and implementing UserInterface
 export class User extends Model implements UserInterface {
-  id!: number;         // User ID
-  name!: string;       // User name
-  email!: string;      // User email
-  password!: string;   // User password
-  createdAt!: Date;    // Timestamp for when the user was created
-  updatedAt!: Date;    // Timestamp for when the user was last updated
-  deleted!: boolean;   // Boolean flag indicating if the user is deleted
+  id!: number;              // User ID
+  name!: string;            // User name
+  accountNumber!: string;   // User account number
+  email!: string;           // User email
+  password!: string;        // User password
+  createdAt!: Date;         // Timestamp for when the user was created
+  updatedAt!: Date;         // Timestamp for when the user was last updated
+  deleted!: boolean;        // Boolean flag indicating if the user is deleted
 
   // Define the table name for the model
   static tableName = 'users';
