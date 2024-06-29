@@ -58,11 +58,11 @@ logger.add(
 );
 
 // Define a stream object for integrating with other libraries that expect a stream
-const loggerStream = {
+const stream = {
     write: (message: string) => {
         logger.info(message.trim()); // Log the message, trimming any trailing newline
     },
 };
 
-// Export the logger and loggerStream as the default export
-export { logger, loggerStream };
+// Export the logger and Stream as the default export
+export { logger, stream };

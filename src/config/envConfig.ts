@@ -17,7 +17,8 @@ export const {
     DATABASE_PASSWORD,     // Password for the database user
     DATABASE_PORT,         // Port number on which the database server is listening
     DATABASE_USERNAME,     // Username for the database
+    LOG_FORMAT,            // Custom log format
     NODE_ENV,              // Current environment (development, staging, or production)
-    SALT_ROUNDS,                  // Number of salt rounds to use for hashing passwords
+    SALT_ROUNDS,           // Number of salt rounds to use for hashing passwords
     TOKEN_EXPIRATION       // Expiration time of created jwt
 } = process.env;

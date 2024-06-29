@@ -1,6 +1,9 @@
 // Import the Router from express to create route handlers
 import { Router } from 'express';
 
+// Import the Routes interface for type definition
+import { Routes } from '../interfaces/route.interface';
+
 // Import the AuthController to handle authentication requests
 import AuthController from '../controllers/auth.controller';
 
@@ -10,7 +13,7 @@ import validationMiddleware from '../middlewares/validation.middleware';
 // Import DTOs for sign-up and sign-in
 import { SignInDto, SignUpDto } from '../dtos/auth.dto';
 
-class AuthRoute {
+class AuthRoute implements Routes {
   // Define the base path for authentication routes
   public path = '/auth/';
 

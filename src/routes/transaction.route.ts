@@ -1,6 +1,9 @@
 // Import the necessary modules and types from 'express'
 import { Router } from 'express';
 
+// Import the Routes interface for type definition
+import { Routes } from '../interfaces/route.interface';
+
 // Import DTOs for funding wallet, transferring funds, and withdrawing funds
 import { FundWalletDto, TransferDto, WithdrawDto } from '../dtos/transaction.dto';
 
@@ -14,7 +17,7 @@ import validationMiddleware from '../middlewares/validation.middleware';
 import TransactionController from '../controllers/transaction.controller';
 
 // Define the TransactionRoute class to set up transaction-related routes
-class TransactionRoute {
+class TransactionRoute implements Routes {
   public path = '/transaction/'; // Base path for transaction routes
   public router = Router(); // Express Router instance
   public trxController = new TransactionController(); // Instance of TransactionController to handle requests
