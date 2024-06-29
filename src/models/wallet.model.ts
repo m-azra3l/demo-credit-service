@@ -9,13 +9,14 @@ import { User } from './user.model';
 
 // Define the Wallet model class, extending Objection's Model class and implementing WalletInterface
 export class Wallet extends Model implements WalletInterface {
-  id!: number;         // Wallet ID
-  accountNumber!: string; // Account number associated with the wallet
-  balance!: number;    // Current balance of the wallet
-  userId!: number;     // ID of the user who owns the wallet
-  createdAt!: Date;    // Timestamp for when the wallet was created
-  updatedAt!: Date;    // Timestamp for when the wallet was last updated
-  deleted!: boolean;   // Boolean flag indicating if the wallet is deleted
+  id!: number;                // Wallet ID
+  accountNumber!: string;     // Account number associated with the wallet
+  balance!: number;           // Current balance of the wallet
+  loan!: number;              // Current owed amount of the wallet
+  userId!: number;            // ID of the user who owns the wallet
+  createdAt!: Date;           // Timestamp for when the wallet was created
+  updatedAt!: Date;           // Timestamp for when the wallet was last updated
+  deleted!: boolean;          // Boolean flag indicating if the wallet is deleted
 
   // Define the table name for the model
   static tableName = 'wallets';

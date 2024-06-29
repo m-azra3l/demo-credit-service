@@ -5,6 +5,7 @@ export async function up(knex: Knex): Promise<void> {
     await knex.schema.createTable('wallets', function (table) {
         table.bigIncrements('id').unsigned().primary(); // Define 'id' as an auto-incremented unsigned integer primary key
         table.decimal('balance', 14, 2).notNullable().defaultTo(0); // Define 'balance' column as a non-nullable decimal with default value 0
+        table.decimal('loan', 14, 2).notNullable().defaultTo(0); // Define 'loan' column as a non-nullable decimal with default value 0
         table.bigInteger('userId').unsigned().notNullable().references('id').inTable('users'); // Define 'userId' as an unsigned integer, non-nullable, referencing 'id' in 'users' table
         table.string('accountNumber', 10).notNullable().unique(); // Define 'accountNumber' column as a non-nullable unique string with a maximum length of 10 characters
         table.timestamp('createdAt').defaultTo(knex.fn.now()); // Define 'createdAt' column with a default timestamp of the current time
