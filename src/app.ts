@@ -6,6 +6,10 @@ import hpp from 'hpp';
 import cors from 'cors';
 import compression from 'compression';
 import morgan from 'morgan';
+// Import Swagger options
+import swaggerOptions from 'swaggerOptions';
+import swaggerJsdoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
 
 // Import custom logging stream
 import { stream } from './utils/logger';
@@ -40,6 +44,7 @@ class App {
 
         this.initializeDatabase(); // Initialize the database connection
         this.initializeMiddlewares(); // Initialize middlewares
+        this.initializeSwagger(); // Initialize Swagger
         this.initializeRoutes(routes); // Initialize routes
         this.initializeErrorHandling(); // Initialize error handling
     };
@@ -84,11 +89,23 @@ class App {
         this.app.use(express.urlencoded({ extended: true }));
     };
 
+    // Private method to initialize Swagger
+    private initializeSwagger() {
+        const specs = swaggerJsdoc(swaggerOptions);
+        this.app.use(
+            '/api-docs', 
+            swaggerUi.serve, 
+            swaggerUi.setup(specs, {
+                explorer: true,
+            })
+        );
+    };
+
     // Private method to initialize routes
     private initializeRoutes(routes: Routes[]) {
         // Iterate over the routes and use them in the application
         routes.forEach(route => {
-            this.app.use('/', route.router);
+            this.app.use('/api/v1/', route.router);
         });
 
         // Handle 404 errors for unknown routes

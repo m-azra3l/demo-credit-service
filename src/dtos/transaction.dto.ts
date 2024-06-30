@@ -1,3 +1,39 @@
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     FundWalletDto:
+ *       type: object
+ *       required:
+ *         - amount
+ *       properties:
+ *         amount:
+ *           type: number
+ *           format: double
+ *           description: Amount to fund the wallet
+ *     WithdrawDto:
+ *       type: object
+ *       required:
+ *         - amount
+ *       properties:
+ *         amount:
+ *           type: number
+ *           format: double
+ *           description: Amount to withdraw from the wallet
+ *     TransferDto:
+ *       type: object
+ *       required:
+ *         - accountNumber
+ *         - amount
+ *       properties:
+ *         accountNumber:
+ *           type: string
+ *           description: Account number to transfer funds to
+ *         amount:
+ *           type: number
+ *           format: double
+ *           description: Amount to transfer
+ */
 // Import validation decorators from 'class-validator'
 import {
     IsString,    // Validates that the value is a string

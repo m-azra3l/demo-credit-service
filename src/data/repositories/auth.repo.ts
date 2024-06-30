@@ -43,7 +43,7 @@ class AuthRepo {
             .from('users')
             .where({ email: userData.email, deleted: false })
             .first();
-        if (checkUser) throw new HttpError(`User with email ${userData.email} already exists`, 409);
+        if (checkUser) throw new HttpError(`User with email ${userData.email} already exists`, 400);
 
         // Check if the user is blacklisted
         const checkKarma = await checkKarmaBlacklist(userData.email);
@@ -76,8 +76,8 @@ class AuthRepo {
 
     // Method to handle user login
     public async signin(userData: SignInDto): Promise<{
-        token: TokenData;
-        user: AccountDto
+        user: AccountDto;
+        token: TokenData
     }> {
         // Validate input data
         if (!userData) throw new HttpError('Please provide required information', 400);
@@ -92,7 +92,7 @@ class AuthRepo {
 
         // Validate user and password
         if (!userInfo || !userInfo.password || !compareSync(userData.password, userInfo.password)) {
-            throw new HttpError('Invalid credentials', 409);
+            throw new HttpError('Invalid credentials', 400);
         }
 
         // Find the user's wallet
@@ -112,7 +112,7 @@ class AuthRepo {
         // Prepare the user data to be returned
         const user = getAccountData(userInfo, wallet);
 
-        return { token, user }; // Return the token and user data
+        return { user, token }; // Return the user and token data
     };
 
 

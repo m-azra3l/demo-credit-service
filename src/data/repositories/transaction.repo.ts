@@ -225,7 +225,7 @@ class TransactionRepo {
 
         // If the user is not found, throw an error
         if (!user) {
-            throw new HttpError(`Recipient user with account number ${accountNumber} not found`, 404);
+            throw new HttpError(`User with account number ${accountNumber} not found`, 404);
         }
         // Query the wallet associated with the user using the user's id and ensure it is not marked as deleted
         const wallet: Wallet | undefined = await Wallet
@@ -234,7 +234,7 @@ class TransactionRepo {
 
         // If the wallet is not found, throw an error
         if (!wallet) {
-            throw new HttpError(`Recipient wallet with account number ${accountNumber} not found`, 404);
+            throw new HttpError(`Wallet with account number ${accountNumber} not found`, 404);
         }
 
         // Return the wallet and user

@@ -1,3 +1,9 @@
+/**
+ * @swagger
+ * tags:
+ *   name: Transaction
+ *   description: Transaction related endpoints
+ */
 // Import necessary modules and types from 'express'
 import { NextFunction, Response } from 'express';
 
@@ -25,6 +31,32 @@ class TransactionController {
     // Create an instance of the TransactionRepo to interact with the data layer
     public trxRepo = new TransactionRepo();
 
+    /**
+     * @swagger
+     * /transaction/fund:
+     *   post:
+     *     summary: Fund a wallet
+     *     tags: [Transactions]
+     *     security:
+     *       - bearerAuth: []
+     *     requestBody:
+     *       required: true
+     *       content:
+     *         application/json:
+     *           schema:
+     *             $ref: '#/components/schemas/FundWalletDto'
+     *     responses:
+     *       200:
+     *         description: Successful
+     *         content:
+     *           application/json:
+     *             schema:
+     *               $ref: '#/components/schemas/AccountDto'
+     *       404:
+     *         description: Recipient user with account number not found
+     *       500:
+     *         description: Someone did something bad in the server! I am sorry
+     */
     // Method to handle funding a wallet
     public fundWallet = async (
         req: RequestWithUser,        // Request object with user data
@@ -48,6 +80,34 @@ class TransactionController {
         }
     };
 
+    /**
+     * @swagger
+     * /transaction/withdraw:
+     *   post:
+     *     summary: Withdraw funds
+     *     tags: [Transactions]
+     *     security:
+     *       - bearerAuth: []
+     *     requestBody:
+     *       required: true
+     *       content:
+     *         application/json:
+     *           schema:
+     *             $ref: '#/components/schemas/WithdrawDto'
+     *     responses:
+     *       200:
+     *         description: Successful
+     *         content:
+     *           application/json:
+     *             schema:
+     *               $ref: '#/components/schemas/AccountDto'
+     *       400:
+     *         description: Insufficient funds! You do not have available funds to perform this operation
+     *       404:
+     *         description: Wallet not found
+     *       500:
+     *         description: Someone did something bad in the server! I am sorry
+     */
     // Method to handle withdrawing funds
     public withdrawFunds = async (
         req: RequestWithUser,        // Request object with user data
@@ -71,6 +131,34 @@ class TransactionController {
         }
     };
 
+    /**
+     * @swagger
+     * /transaction/transfer:
+     *   post:
+     *     summary: Transfer funds
+     *     tags: [Transactions]
+     *     security:
+     *       - bearerAuth: []
+     *     requestBody:
+     *       required: true
+     *       content:
+     *         application/json:
+     *           schema:
+     *             $ref: '#/components/schemas/TransferDto'
+     *     responses:
+     *       200:
+     *         description: Successful
+     *         content:
+     *           application/json:
+     *             schema:
+     *               $ref: '#/components/schemas/AccountDto'
+     *       400:
+     *         description: Insufficient funds! You do not have available funds to perform this operation
+     *       404:
+     *         description: Wallet not found
+     *       500:
+     *         description: Someone did something bad in the server! I am sorry
+     */
     // Method to handle transferring funds
     public transferFunds = async (
         req: RequestWithUser,        // Request object with user data
@@ -94,6 +182,26 @@ class TransactionController {
         }
     };
 
+    /**
+     * @swagger
+     * /transaction/transactions:
+     *   get:
+     *     summary: Get user transactions
+     *     tags: [Transactions]
+     *     security:
+     *       - bearerAuth: []
+     *     responses:
+     *       200:
+     *         description: Successful
+     *         content:
+     *           application/json:
+     *             schema:
+     *               type: array
+     *               items:
+     *                 $ref: '#/components/schemas/UserTransaction'
+     *       500:
+     *         description: Someone did something bad in the server! I am sorry
+     */
     // Method to get user transactions
     public getTransactions = async (
         req: RequestWithUser,        // Request object with user data

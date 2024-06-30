@@ -1,3 +1,42 @@
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     AccountDto:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: integer
+ *           description: Id of the user
+ *           example: 1
+ *         name:
+ *           type: string
+ *           description: Name of the user
+ *           example: John Doe
+ *         accountNumber:
+ *           type: string
+ *           description: Account number of the user
+ *           example: "1234567890"
+ *         email:
+ *           type: string
+ *           description: Email of the user
+ *           example: "john.doe@example.com"
+ *         balance:
+ *           type: number
+ *           format: double
+ *           description: Balance of the user's wallet
+ *           example: 1000.50
+ *         loan:
+ *           type: number
+ *           format: double
+ *           description: Loan owed by the user
+ *           example: 200.00
+ *         available:
+ *           type: number
+ *           format: double
+ *           description: Available balance of the user's wallet
+ *           example: 800.50
+ */
 // Data Transfer Object (DTO) class for user account
 export class AccountDto {
     public id: number              // Id of the user

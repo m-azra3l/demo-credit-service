@@ -1,3 +1,41 @@
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     SignUpDto:
+ *       type: object
+ *       required:
+ *         - name
+ *         - email
+ *         - password
+ *       properties:
+ *         name:
+ *           type: string
+ *           example: Jon Doe
+ *         email:
+ *           type: string
+ *           format: email
+ *         password:
+ *           type: string
+ *           format: password
+ *           example: P@ssword1
+ *           minLength: 8
+ *     SignInDto:
+ *       type: object
+ *       required:
+ *         - email
+ *         - password
+ *       properties:
+ *         email:
+ *           type: string
+ *           format: email
+ *         password:
+ *           type: string
+ *           format: password
+ *           example: P@ssword1
+ *           minLength: 8
+ */
+
 // Import validation decorators from 'class-validator'
 import {
     IsEmail,    // Validates that the value is a valid email address
