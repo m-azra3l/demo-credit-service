@@ -22,5 +22,15 @@ const app = new App([
     new TransactionRoute()   // Transaction-related routes
 ]);
 
+// Start the server and listen on the specified port in development mode
+if (app.env === "development") {
+    // Start the server and listen on the specified port
+    const server = app.listen();
+    const PORT = app.port;
+    server.listen(PORT, () => {
+        console.log(`Server running in ${app.env} mode on port ${PORT}`);
+    });
+};
+
 // Export the serverless handler to handle requests in a serverless environment
 export const handler = serverless(app.listen());
