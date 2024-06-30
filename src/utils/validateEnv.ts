@@ -6,8 +6,8 @@ const validateEnv = () => {
     // Validate the environment variables using cleanEnv
     // This will check if the specified environment variables are present and valid
     cleanEnv(process.env, {
-        NODE_ENV: str(), // NODE_ENV should be a string
-        PORT: port(),    // PORT should be a port number
+        NODE_ENV: str(),     // NODE_ENV should be a string
+        API_PORT: port(),    // API_PORT should be a port number
     });
 };
 

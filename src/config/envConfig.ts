@@ -1,13 +1,15 @@
 // Import the 'config' function from the 'dotenv' package to load environment variables from a .env file
-// import { config } from 'dotenv';
-// Load the environment variables from a .env file based on the current NODE_ENV (defaults to 'development')
-// config({ path: `.env.${process.env.NODE_ENV || 'development'}.local` });
+//import { config } from 'dotenv';
+//import path from 'path';
 
-require('dotenv').config();
+// Determine which .env file to load based on NODE_ENV(defaults to 'development')
+//const envPath = path.resolve(__dirname, `../.env.${process.env.NODE_ENV || 'development'}`);
+//config({ path: envPath });
+
+ require('dotenv').config();
 
 // Destructure and export the necessary environment variables from 'process.env'
 export const {
-    ADJUTOR_APP_ID,        // Application ID for the Adjutor service
     ADJUTOR_BASE_URL,      // Base URL for the Adjutor service
     ADJUTOR_SECRET_KEY,    // Secret key for authenticating with the Adjutor service
     API_PORT,              // Port number for the API server

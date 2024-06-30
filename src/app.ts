@@ -36,7 +36,7 @@ class App {
     constructor(routes: Routes[]) {
         this.app = express();
         this.env = NODE_ENV || 'development';
-        this.port = API_PORT || 8080;
+        this.port = API_PORT || 5000;
 
         this.initializeDatabase(); // Initialize the database connection
         this.initializeMiddlewares(); // Initialize middlewares
