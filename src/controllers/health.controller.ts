@@ -1,3 +1,61 @@
+/**
+ * @swagger
+ * tags:
+ *   name: Health
+ *   description: API for health check
+ */
+
+/**
+ * @swagger
+ * /:
+ *   get:
+ *     summary: Check the health of the application
+ *     tags: [Health]
+ *     responses:
+ *       200:
+ *         description: The application is healthy
+ *         content:
+ *           text/html:
+ *             schema:
+ *               type: string
+ *               example: <h1>Healthy🎉🎊</h1>
+ *       500:
+ *         description: Server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Someone did something bad in the server! I am sorry
+ */
+
+/**
+ * @swagger
+ * /health:
+ *   get:
+ *     summary: Check the health of the application
+ *     tags: [Health]
+ *     responses:
+ *       200:
+ *         description: The application is healthy
+ *         content:
+ *           text/html:
+ *             schema:
+ *               type: string
+ *               example: <h1>Healthy🎉🎊</h1>
+ *       500:
+ *         description: Server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Someone did something bad in the server! I am sorry
+ */
 // Import necessary types from 'express'
 import { NextFunction, Request, Response } from 'express';
 
