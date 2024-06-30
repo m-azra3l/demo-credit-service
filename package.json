@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "NODE_ENV=production node dist/src/server.js",
-    "dev": "NODE_ENV=development nodemon",
-    "build": "tsc",
+    "start": "npm run build && cross-env NODE_ENV=production node dist/src/server.js",
+    "dev": "cross-env NODE_ENV=development nodemon",
+    "build": "swc src -d dist --source-maps --copy-files",
     "test": "NODE_ENV=development jest --forceExit --detectOpenHandles",
     "migrate": "knex migrate:latest --knexfile=knexfile.ts --verbose"
   },
