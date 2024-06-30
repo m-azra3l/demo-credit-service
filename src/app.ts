@@ -7,7 +7,7 @@ import cors from 'cors';
 import compression from 'compression';
 import morgan from 'morgan';
 // Import Swagger options
-import swaggerOptions from 'swaggerOptions';
+import swaggerOptions from './swaggerOptions';
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 
