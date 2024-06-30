@@ -4,7 +4,7 @@ import winston from 'winston'; // Winston logging library
 import winstonDaily from 'winston-daily-rotate-file'; // Winston transport for daily log rotation
 
 // Define the path to the logs directory
-const logsDirectoryPath: string = join(__dirname, 'dist/logs');
+const logsDirectoryPath: string = join(__dirname, '../logs');
 
 // Check if the logs directory exists, if not, create it
 if (!existsSync(logsDirectoryPath)) {
