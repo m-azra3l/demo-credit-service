@@ -110,7 +110,7 @@ The following order should be followed to avoid conflicts while seedind database
 
 ### Database E.R Diagram
 
-ER
+![demo credit er diagram](https://github.com/m-azra3l/demo-credit-service/assets/26850963/4d9619bc-72e7-4d75-9068-eaf90c75f74f)
 
 ## Running the App
 
