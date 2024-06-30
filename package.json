@@ -10,7 +10,7 @@
     "migrate": "knex migrate:latest --knexfile=knexfile.ts --verbose"
   },
   "engines": {
-    "node": ">=20.13.1"
+    "node": ">=20.12.2"
   },
   "keywords": [],
   "author": "Michael Adesina",
