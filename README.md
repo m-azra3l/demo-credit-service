@@ -144,19 +144,6 @@ This will execute all unit and integration tests using Jest and Supertest.
 
 Enjoy using the Demo Credit Service API! Feel free to contribute or open issues if you find any bugs.
 
-### Explanation
-
-- **Features**: A list of key features in the application.
-- **Requirements**: Lists the prerequisites for running the application.
-- **Installation**: Instructions to clone the repository and install dependencies.
-- **Environment Variables**: Details on setting up environment variables.
-- **Database Setup**: Commands to run migrations and seeds.
-- **Running the App**: Instructions to start the server.
-- **API Documentation**: Information on accessing the Swagger-generated API documentation.
-- **Testing**: Commands to run the test suite.
-
-This `README.md` should provide a comprehensive guide for setting up and running your application.
-
 ## Reasons for my stack
 
 Check out the reasons for my tech stach [here](https://docs.google.com/document/d/1PM40WUCgjCeqcQdybVBCccpqxkOjrM2S4bgOC4L1ObM/edit?usp=sharing).
