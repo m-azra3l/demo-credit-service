@@ -57,6 +57,7 @@ class AuthRepo {
             .insert({
                 ...userData,
                 accountNumber,
+                // Use a promisable hash method from bcrypt that run on seperate thread
                 password: hashSync(userData.password, Number(SALT_ROUNDS))
             });
 
